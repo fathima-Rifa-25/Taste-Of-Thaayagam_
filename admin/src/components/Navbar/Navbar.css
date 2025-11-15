@@ -1,0 +1,233 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  padding: 0 3%;
+  background-color: #fff;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  gap: 15px;
+}
+
+.logo-wrapper {
+  height: 90px; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  width: 190px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Search Bar */
+.search-bar {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 280px;
+  font-size: 14px;
+  outline: none;
+  margin-left: 20px;
+}
+
+.search-bar:focus {
+  border-color: #3b0000;
+  box-shadow: 0 0 3px #3b0000;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+
+.lang-select select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+}
+
+.divider {
+  color: #ccc;
+  font-weight: bold;
+  margin: 0 12px;
+}
+
+.icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.maroon-bg {
+  background-color: #3b0000;
+}
+
+.maroon-bg:hover {
+  background-color: #5c1a1a;
+}
+
+.icon {
+  font-size: 18px;
+  color: #fff;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Dark/Light Toggle */
+.switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 64px;
+  height: 34px;
+  border-radius: 34px;
+  cursor: pointer;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-circle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+  background-color: #3b0000; /* default light mode circle */
+  color: white;
+}
+
+/* Slide and color change when toggled */
+.switch input:checked + .slider-circle {
+  transform: translateX(30px);
+  background-color: #fff;
+  color: black;
+}
+
+.switch.light {
+  background-color: #ccc;
+}
+
+.switch.dark {
+  background-color: #3b0000;
+}
+
+/* Dark mode for navbar */
+body.dark-mode .navbar {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .navbar .lang-select select {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+body.dark-mode .navbar .divider {
+  color: #666;
+}
+
+body.dark-mode .navbar .icon-wrapper.maroon-bg {
+  background-color: #5c1a1a;
+}
+
+body.dark-mode .navbar .icon-wrapper.maroon-bg:hover {
+  background-color: #7a2a2a;
+}
+
+body.dark-mode .navbar .icon {
+  color: #fff;
+}
+
+body.dark-mode .navbar .greeting {
+  color: #eee;
+}
+
+body.dark-mode .navbar .profile {
+  border: 2px solid #fff;
+}
+
+/* Notifications dropdown */
+.notifications-dropdown {
+  position: absolute;
+  top: 90px;
+  right: 120px;
+  width: 360px;
+  max-height: 420px;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 1100;
+}
+.notifications-header { padding: 10px 12px; border-bottom: 1px solid #eee; }
+.notifications-list { padding: 8px; display: flex; flex-direction: column; gap: 8px; }
+.notification-item { padding: 8px; border-radius: 6px; background: #fafafa; }
+.notification-item.unread { background: #fff6f6; border-left: 4px solid #ff4d4d; }
+.notification-meta { display:flex; justify-content: space-between; font-size: 12px; color: #333; }
+.notification-sender { font-weight: 600; }
+.notification-subject { font-size: 14px; margin-top:6px; font-weight:600 }
+.notification-body { margin-top:6px; font-size: 13px; color: #333; }
+.notification-actions { margin-top:8px; display:flex; gap:8px; }
+.notification-actions button { background:#3b0000; color:#fff; border:none; padding:6px 10px; border-radius:6px; cursor:pointer }
+.notification-empty { padding: 12px; color:#666 }
+
+body.dark-mode .notifications-dropdown { background:#262626; border-color:#444 }
+body.dark-mode .notification-item { background:#1e1e1e }
+body.dark-mode .notification-item.unread { background:#2a1a1a }
+
+
+/* Smooth transition */
+.navbar,
+.navbar .lang-select select,
+.navbar .icon-wrapper,
+.navbar .greeting,
+.navbar .profile {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

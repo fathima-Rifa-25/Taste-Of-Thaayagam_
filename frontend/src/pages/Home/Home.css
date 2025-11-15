@@ -1,0 +1,125 @@
+/* Clean CSS (removed escaped characters) */
+.home-gallery {
+	width: 100%;
+	margin: 40px 0 10px;
+	display: grid;
+	gap: 18px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery-slot {
+	background: #f3f3f3;
+	border: 2px dashed #ccc;
+	min-height: 140px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	color: #666;
+	font-weight: 500;
+	transition: background .2s, color .2s;
+}
+
+.gallery-slot:hover {
+	background: #e9e9e9;
+	color: #444;
+}
+
+@media (max-width: 768px) {
+	.home-gallery {
+		margin: 28px 0 0;
+		gap: 12px;
+	}
+	.gallery-slot {
+		min-height: 110px;
+		font-size: 12px;
+	}
+}
+
+/* Two-column info section */
+/* Unified merged section wrapper */
+.home-merged {
+	max-width: 1200px;
+	margin: -40px auto 70px;
+	padding: 0 20px;
+	position: relative;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	gap: 46px;
+}
+
+.home-info-panels {
+	margin: 0; /* now controlled by wrapper */
+	background: #ffffff;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+	border-radius: 10px;
+	overflow: hidden;
+	
+}
+
+.home-info-panel {
+	padding: 56px 64px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	line-height: 1.52;
+}
+
+.home-info-panel + .home-info-panel {
+	border-left: 1px solid #e5e5e5;
+}
+
+.home-info-panel h3 {
+	margin: 0;
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: .5px;
+}
+
+.home-info-panel p {
+	margin: 0;
+	font-size: 14px;
+	color: #2c2c2c;
+}
+
+@media (max-width: 1000px) {
+	.home-merged {
+		margin: -20px auto 60px;
+		padding: 0 24px;
+	}
+	.home-info-panel {
+		padding: 48px 48px;
+	}
+}
+
+@media (max-width: 780px) {
+	.home-merged {
+		margin: 10px auto 60px;
+		padding: 0 18px;
+		gap: 38px;
+	}
+	.home-info-panels {
+		grid-template-columns: 1fr;
+	}
+	.home-info-panel + .home-info-panel {
+		border-left: none;
+		border-top: 1px solid #e5e5e5;
+	}
+	.home-info-panel {
+		padding: 44px 40px;
+	}
+}
+
+@media (max-width: 520px) {
+	.home-info-panel {
+		padding: 38px 30px;
+	}
+	.home-info-panel h3 {
+		font-size: 24px;
+	}
+	.home-info-panel p {
+		font-size: 13px;
+	}
+}

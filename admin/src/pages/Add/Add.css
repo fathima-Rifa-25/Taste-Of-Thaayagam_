@@ -1,0 +1,97 @@
+:root {
+    --text-color: #1e1e1e;
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
+    --img-border: #3b0000;
+    --btn-bg: #3b0000;
+    --btn-hover-bg: #550000;
+}
+
+/* Layout: left-align Add page content */
+.page-container .add {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    max-width: 1100px;
+}
+
+.add .add-btn {
+    max-width: 120px;
+    border: none !important;
+    padding: 10px 14px;
+    background-color: #3b0000 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, transform 0.08s ease;
+}
+
+.add .add-btn:hover {
+    background-color: #2b0000 !important;
+    transform: translateY(-1px);
+}
+.add-img-upload img {
+    width: 120px;
+    border: 2px solid var(--img-border);
+    border-radius: 6px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.add-product-name,
+.add-product-description {
+    width: max(40%, 280px);
+}
+
+.add-product-name input,
+.add-product-description textarea {
+    padding: 10px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    border-radius: 6px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.add-category-price {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.add-category-price select,
+.add-category-price input {
+    max-width: 120px;
+    padding: 10px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    border-radius: 6px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    font-size: 14px;
+}
+
+.add-btn {
+    max-width: 120px;
+    border: none;
+    padding: 10px;
+    background-color: var(--btn-bg);
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.add-btn:hover {
+    background-color: #2b0000;
+}
+
+/* Utility class used in form layout */
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

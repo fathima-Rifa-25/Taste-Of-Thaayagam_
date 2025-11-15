@@ -1,0 +1,109 @@
+/* Sidebar container */
+.sidebar {
+  position: fixed;
+  top: 90px;                       /* below navbar */
+  left: 0;
+  width: 18%;
+  height: calc(100vh - 90px);      /* fill remaining space below navbar */
+  border-right: 1.5px solid #A9A9A9;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: max(1vw, 10px);
+  overflow-y: auto;                /* allow scrolling if content exceeds */
+  z-index: 100;                     /* above page content but below navbar */
+}
+
+/* Top navigation links */
+.sidebar-options {
+  padding-top: 20px;               /* reduce top padding */
+  padding-left: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+/* Each nav link */
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-radius: 3px 0 0 3px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+  min-width: unset;
+  white-space: nowrap;              /* prevent text wrap */
+}
+
+/* Icon */
+.sidebar-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover and active */
+.sidebar-option:hover,
+.sidebar-option.active {
+  background-color: #3b0000;
+  color: #fff;
+}
+
+/* Bottom fixed section */
+.sidebar-bottom {
+  padding-left: 15%;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar-bottom .sidebar-option {
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sidebar-option p {
+    display: none;
+  }
+  .sidebar-bottom {
+    padding-left: 10%;
+  }
+}
+
+/* Page container to adjust for sidebar & navbar */
+.page-container {
+  margin-left: 18%;               /* space for sidebar */
+  margin-top: 90px;               /* space for navbar */
+  padding: 20px 30px;
+  min-height: calc(100vh - 90px);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* DARK MODE COLORS ONLY - sidebar */
+body.dark-mode .sidebar {
+  background-color: #121212 !important;
+  border-right-color: #555 !important;
+  color: #f0e6e6 !important;
+}
+
+body.dark-mode .sidebar .sidebar-option {
+  color: #f0e6e6 !important;
+}
+
+body.dark-mode .sidebar .sidebar-icon {
+  color: #f0e6e6 !important;
+}
+
+body.dark-mode .sidebar .sidebar-option:hover,
+body.dark-mode .sidebar .sidebar-option.active {
+  background-color: #bb4444 !important;
+  color: #fff !important;
+}

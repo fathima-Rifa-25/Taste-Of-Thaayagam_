@@ -1,0 +1,240 @@
+/* Table Row Styling */
+.list-table-format {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2.8fr 1.8fr 1.fr 1.2fr 1fr !important;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Column Alignments */
+.list-table-format p:nth-child(1),
+.list-table-format p:nth-child(2) {
+  text-align: left;
+}
+
+.list-table-format p:nth-child(3),
+.list-table-format p:nth-child(4),
+.list-table-format p:nth-child(5),
+.list-table-format .cursor {
+  text-align: center;
+  justify-content: center;
+}
+
+/* Header Row */
+.list-table-format.title {
+  background-color: var(--input-bg);
+  font-weight: bold;
+  border-bottom: 2px solid var(--input-border);
+}
+
+/* Data Rows */
+.list-table-format:not(.title) {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--input-border);
+}
+
+.list-table-format:not(.title):hover {
+  background-color: rgba(0,0,0,0.03);
+  transition: background-color 0.2s;
+}
+
+/* Action Icons */
+.cursor {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.action-icon {
+  font-size: 16px;
+  color: #3b0000;
+}
+
+.action-icon:hover {
+  color: #5c1a1a;
+}
+
+/* Add User Form */
+.user-form {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) 140px; /* 5 inputs + 1 button */
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.user-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.user-form input:focus {
+  border-color: #3b0000;
+  box-shadow: 0 0 5px #3b0000;
+  outline: none;
+}
+
+.add-user-btn {
+  padding: 10px;
+  background-color: #3b0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-user-btn:hover {
+  background-color: #5c1a1a;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .list-table-format {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .list-table-format.title {
+    display: none;
+  }
+
+  .user-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Page Container */
+.page-container {
+  width: 100%;
+  padding: 0; /* Remove side padding to allow full-width */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main Content Wrapper */
+.list.add {
+  width: 100%;
+  max-width: 100%; /* Remove constraint */
+  margin: 0 auto;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  padding:0; /* Optional padding */
+}
+
+/* Table Container */
+.list-table {
+  width: 100%;
+  flex-grow: 1; /* Ensures it expands as needed */
+}
+
+/* Optional: subtle background for debugging layout */
+.list-table-format {
+  background-color: var(--bg-color); /* inherit page bg or card bg */
+}
+
+/* Export Buttons */
+.export-actions .btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pdf-btn {
+  background-color: #3b0000;
+  color: white;
+}
+
+.pdf-btn:hover {
+  background-color: #5c1a1a;
+}
+
+.csv-btn {
+  background-color: #004a3b;
+  color: white;
+}
+
+.csv-btn:hover {
+  background-color: #007e63;
+}
+
+/* Optional: Modal styles (if not defined elsewhere) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: var(--input-bg);
+  padding: 20px;
+  border-radius: 6px;
+  width: 400px;
+  max-width: 95%;
+  color: var(--text-color);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #3b0000;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Action icons spacing */
+.action-icons span { margin-right: 12px; display: inline-flex; }
+
+/* Make user table use fractional columns and full width similar to supplier */
+.user-page .list-table-format {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr; /* FirstName, LastName, Email, Phone, Action */
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  white-space: nowrap;
+}
+

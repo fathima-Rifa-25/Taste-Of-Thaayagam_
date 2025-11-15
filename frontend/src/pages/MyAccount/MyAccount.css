@@ -1,0 +1,9 @@
+.myaccount-page{display:flex;align-items:center;justify-content:center;height:calc(100vh - 90px);padding:20px}
+.myaccount-card{width:100%;max-width:520px;background:#fff;border-radius:12px;padding:28px;box-shadow:0 12px 40px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:12px}
+.myaccount-card h2{text-align:center;margin:0 0 6px}
+.myaccount-card label{font-size:13px;color:#444;margin-top:8px}
+.myaccount-card input{padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px}
+.actions{display:flex;gap:12px;justify-content:flex-end;margin-top:8px}
+.actions button{padding:10px 18px;border-radius:8px;border:none;background:#3b0000;color:#fff;cursor:pointer}
+.actions button.cancel{background:#eee;color:#333}
+.message{margin-top:10px;color:green;text-align:center}

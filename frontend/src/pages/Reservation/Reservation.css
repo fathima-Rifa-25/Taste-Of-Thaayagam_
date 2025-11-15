@@ -1,0 +1,202 @@
+/* Ctable */
+.reservation-container {
+  min-height: 100vh; 
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* center the two boxes horizontally */
+  align-items: center; /* align boxes at top */
+  gap: 30px; /* space between the boxes */
+  flex-wrap: wrap; /* wrap boxes on small screens */
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Left box - reservation form reserve the table */
+.reservation-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 600px; /* adjust width */
+  margin-left: 0;     /* Removes any gap on the left */
+  margin-right: 0; /* Pushes it to the left */
+  
+} 
+
+/* Reservation form headings */
+.reservation-form h2 {
+  font-size: 22px; /* "Reserve a Table" size */
+  color: #550000;
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+  width: 600px;
+  
+}
+
+.reservation-form h1 {
+  font-size: 28px; /* "Dine With Us - Reserve Now" size */
+  color: #000;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+  
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Submit button */
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background: #f6cd0b;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.btn-submit:hover {
+  background: #550000;
+  color: #fff;
+
+}
+
+/* Right box - reservation info */
+.reservation-info {
+  text-align: center;
+  background: #000;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: auto;     /* Removes any gap on the left */
+  margin-right: 0;
+  
+}
+
+/* Info headings */
+.reservation-info h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+/* Info text */
+.reservation-info p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Paragraph spacing for multiple paragraphs in same block */
+.reservation-info div p + p {
+  margin-top: 5px;
+}
+
+/* Social icons */
+.reservation-info .social-icons {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+  background: #e63946;
+  justify-content: flex-start;
+  
+}
+
+/* Table map container */
+.table-map {
+  margin-bottom: 30px;
+  text-align: center;
+  
+}
+
+/* Table map heading */
+.table-map h3 {
+  font-size: 35px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+/* Tables grid */
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* 3 tables per row */
+  gap: 40px 60px; /* vertical and horizontal spacing */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Table wrapper */
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Table with side chairs */
+.table-with-side-chairs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Table seat */
+.table-seat {
+  width: 80px;
+  height: 80px;
+  background: #550000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+
+
+/* Chairs container */
+.chairs {
+  display: flex;
+  gap: 5px;
+}
+
+/* Individual chair */
+.chair {
+  width: 20px;
+  height: 20px;
+  background: #f6cd0b;
+  border-radius: 4px;
+  border: 1px solid #550000;
+  cursor: pointer;
+  transition: all 0.2s;
+}

@@ -1,0 +1,18 @@
+.my-orders{padding:20px}
+.my-orders h2{margin:0 0 12px}
+.no-orders{color:#666}
+.orders-table-wrapper{overflow:auto;background:#fff;padding:12px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.04)}
+.orders-table{width:100%;border-collapse:collapse;min-width:720px}
+.orders-table th,.orders-table td{padding:10px 12px;border-bottom:1px solid #f0f0f0;text-align:left}
+.orders-table thead th{background:#fafafa;font-weight:600}
+.mono{font-family:monospace;font-size:13px;color:#333}
+.items-cell .item-row{display:inline-block;margin-right:6px}
+.status{padding:6px 10px;border-radius:16px;font-weight:600;font-size:13px}
+.status.pending{background:#fff3cd;color:#856404}
+.status.completed{background:#d4edda;color:#155724}
+.status.canceled{background:#f8d7da;color:#721c24}
+
+@media (max-width: 800px){
+  .orders-table{min-width:0;font-size:13px}
+  .orders-table th:nth-child(1), .orders-table td:nth-child(1){display:none}
+}

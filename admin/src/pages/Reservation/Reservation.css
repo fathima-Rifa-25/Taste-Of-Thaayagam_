@@ -1,0 +1,304 @@
+/* ====================== Reservation Page CSS ====================== */
+
+/* ================= Top Controls ================= */
+.top-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-bar-top {
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.right-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.top-btn,
+.add-reservation-btn,
+.generate-report-btn {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.top-btn:hover,
+.add-reservation-btn:hover,
+.generate-report-btn:hover {
+  background-color: var(--btn-hover-bg);
+  box-shadow: 0 0 8px rgba(91, 26, 26, 0.35);
+}
+
+.top-btn:active,
+.add-reservation-btn:active,
+.generate-report-btn:active {
+  background-color: var(--btn-hover-bg);
+}
+
+/* ================= Add Reservation Form ================= */
+.reservation-form {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr)) 140px; /* 7 inputs + button */
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reservation-form input,
+.reservation-form select {
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s, box-shadow 0.2s;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus {
+  border-color: #3b0000;
+  box-shadow: 0 0 5px #3b0000;
+  outline: none;
+}
+
+.add-reservation-btn {
+  background-color: var(--btn-bg);
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-reservation-btn:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+/* ================= Table Styling ================= */
+.reservation-page .list-table-format {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(110px, 1fr)); /* 8 columns responsive */
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  white-space: normal;
+  box-sizing: border-box;
+}
+
+.reservation-page .list-table-format.title {
+  background-color: var(--input-bg);
+  font-weight: bold;
+  border-bottom: 2px solid var(--input-border);
+}
+
+.reservation-page .list-table-format:not(.title) {
+  background-color: var(--bg-color);
+}
+
+.reservation-page .list-table-format:not(.title):hover {
+  background-color: rgba(0,0,0,0.03);
+  transition: background-color 0.2s;
+}
+
+.reservation-page .list-table-format p,
+.reservation-page .list-table-format b {
+  text-align: center;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ================= Action Icons ================= */
+.action-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-icon {
+  font-size: 16px;
+  color: var(--btn-bg);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.action-icon:hover {
+  color: var(--btn-hover-bg);
+}
+
+/* ================= Export Buttons ================= */
+.export-actions .btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pdf-btn {
+  background-color: var(--btn-bg);
+  color: white;
+}
+
+.pdf-btn:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+.csv-btn {
+  background-color: #004a3b;
+  color: white;
+}
+
+.csv-btn:hover {
+  background-color: #007e63;
+}
+
+/* ================= Modal (Edit / Delete) ================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: var(--input-bg);
+  padding: 25px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 95%;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #3b0000;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #5c1a1a;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: black;
+}
+
+.cancel-btn:hover {
+  background-color: #b3b3b3;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+  .reservation-form {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-page .list-table-format {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    font-size: 12px;
+  }
+
+  .reservation-page .list-table-format.title {
+    display: none;
+  }
+
+  .add-reservation-btn {
+    width: 100%;
+  }
+}
+
+/* ================= Page Container ================= */
+/* Ensure reservation page content uses full available width (override dashboard container) */
+.reservation-page.page-container,
+.reservation-page.page-container > .list {
+  width: 100%;
+  max-width: none;
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+.reservation-page.page-container {
+  display: block; /* don't center inner content */
+}
+
+.reservation-page .list.add {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.reservation-page .list-table {
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* Subtle background for table rows */
+.list-table-format {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* === Dark Mode Overrides === */
+/* Dark mode handled by CSS variables in index.css; overrides kept minimal */

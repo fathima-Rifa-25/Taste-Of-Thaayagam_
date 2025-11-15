@@ -1,0 +1,65 @@
+/* Hero3 wrapper centered */
+.header4{
+    height: 34vw;
+    margin: 30px auto;
+    background: url('/Hero3.png') center center / cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center; /* vertical center */
+    justify-content: center; /* horizontal center */
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* Inner content centered */
+.header-contents4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vw;
+    max-width: 70%;
+    animation: fadeIn 2s;
+}
+.header-contents h2{
+    font-weight:500;
+    color: white;
+    font-size: max(4.5vw,22px);
+}
+.header-contents p{
+    color: white;
+    font-size: 1vw;
+}
+.header-contents button{
+    border: none;
+    color: #747474;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background: white;
+    font-size: max(1vw,13px);
+    border-radius: 50px;
+}
+@media (max-width:1050px) {
+    .header4{
+        height: 40vw;
+    }
+    .header-contents4{
+        max-width: 75%;
+    }
+}
+@media(max-width:750px){
+    .header4{
+        height: 60vw;
+    }
+    .header-contents4{
+        max-width: 90%;
+        gap: 3vw;
+    }
+    .header-contents4 p{
+       display: none;
+    }
+    .header-contents4 button{
+        padding: 2.4vw 5vw;
+    }
+}
+

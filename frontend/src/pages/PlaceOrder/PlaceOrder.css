@@ -1,0 +1,163 @@
+.place-order {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 50px;
+    margin: 100px 0;
+    flex-wrap: wrap;
+}
+
+.place-order-left {
+    width: 100%;
+    max-width: 500px;
+}
+
+.place-order-left .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.place-order-left input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C5C5C5;
+    border-radius: 4px;
+    outline-color: #800000; /* Maroon outline on focus */
+}
+
+.place-order-left .multi-field {
+    display: flex;
+    gap: 10px;
+}
+
+.place-order-right {
+    width: 100%;
+    max-width: 500px;
+}
+
+.cart-total {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.cart-total h2 {
+    margin-bottom: 20px;
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.cart-total-details b {
+    font-size: 18px;
+}
+
+.payment {
+    margin-top: 20px;
+}
+
+.payment h2 {
+    margin-bottom: 15px;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid #C5C5C5;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    background-color: #fff;
+}
+
+.payment-option img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #C5C5C5;
+    transition: all 0.2s;
+}
+
+.payment-option.selected img {
+    background-color: #800000; /* Maroon fill */
+    border-color: #800000;
+}
+
+.payment-option p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.place-order-submit {
+    margin-top: 30px;
+    width: 100%;
+    border: none;
+    background-color: #800000; /* Maroon button */
+    color: white;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.place-order-submit:hover {
+    background-color: #700101; /* Slightly brighter maroon hover */
+}
+
+@media (max-width: 700px) {
+    .place-order {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #3b0000;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-option.selected {
+    border-color: #3b0000; /* Maroon theme color */
+    background-color: #ffe6e6; /* light background */
+}
+
+.payment-option img {
+    width: 20px;
+    height: 20px;
+}
+
+.place-order-submit {
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    background-color: #3b0000; /* Maroon */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}

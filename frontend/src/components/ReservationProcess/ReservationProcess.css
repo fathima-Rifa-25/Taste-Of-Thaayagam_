@@ -1,0 +1,87 @@
+:root{ --rp-maroon: #7b1120; --rp-maroon-dark: #5a0b15; --rp-muted: #f6f6f6; }
+
+.reservation-process{ padding:56px 0 64px; text-align:center; color:#222; }
+.reservation-process h2{ font-size:36px; margin-bottom:6px; color:var(--rp-maroon); letter-spacing:0.4px }
+.reservation-process .rp-subtitle{ color:#666; margin-bottom:22px; font-size:15px }
+.rp-grid{ display:flex; gap:36px; justify-content:center; align-items:center; max-width:1160px; margin:0 auto; padding:0 20px }
+.rp-col{ display:flex; flex-direction:column; justify-content:space-between; gap:22px; width:42%; position:relative; min-height:240px }
+.rp-center{ width:16%; display:flex; align-items:center; justify-content:center; position:relative }
+
+.rp-step{ display:flex; align-items:center; gap:18px; position:relative; /* visible by default so content isn't hidden */ opacity:1; transform:translateY(0); min-height:86px; transition:opacity .32s ease, transform .32s cubic-bezier(.2,.9,.2,1) }
+.rp-step.rp-inview{ /* subtle entrance boost when the section becomes visible */ transform:translateY(-4px); box-shadow:0 6px 20px rgba(27,27,27,0.04) }
+.rp-col.left .rp-step:nth-child(1){ transition-delay:.06s }
+.rp-col.left .rp-step:nth-child(2){ transition-delay:.14s }
+.rp-col.right .rp-step:nth-child(1){ transition-delay:.1s }
+.rp-col.right .rp-step:nth-child(2){ transition-delay:.18s }
+
+.rp-icon{ width:56px; height:56px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; border:5px solid rgba(255,255,255,0.95); box-shadow:0 10px 20px rgba(27,27,27,0.07); color:var(--rp-maroon); position:relative }
+
+/* outer ring behind the circular icon (larger, softer) */
+.rp-icon::before{ content:""; position:absolute; left:-18px; top:-18px; width:88px; height:88px; border-radius:50%; background:rgba(123,17,32,0.05); z-index:-1 }
+
+/* position markers outside the card without overlapping content */
+.rp-col.left .rp-step{ position:relative }
+.rp-col.right .rp-step{ position:relative }
+.rp-col.left .rp-step .rp-icon,
+.rp-col.right .rp-step .rp-icon{ position:absolute; top:50%; transform:translateY(-50%); left:-86px }
+.rp-col.right .rp-step .rp-icon{ left:auto; right:-86px }
+
+.rp-card{ background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.86)); color:#222; padding:20px 22px; border-radius:14px; text-align:left; box-shadow:0 12px 28px rgba(27,27,27,0.06); transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, backdrop-filter .18s ease; border:1px solid rgba(27,27,27,0.06); backdrop-filter: blur(6px); }
+.rp-col.left .rp-card{ padding-left:110px }
+.rp-col.right .rp-card{ padding-right:110px }
+.rp-card:hover{ transform:translateY(-8px); box-shadow:0 22px 48px rgba(27,27,27,0.08); border-color:rgba(27,27,27,0.09); }
+.rp-card h4{ margin:0 0 8px 0; color:#111; font-size:18px }
+.rp-card p{ margin:0; font-size:15px; color:#5a5a5a; line-height:1.6 }
+
+.rp-delivery-badge{ background:linear-gradient(90deg,var(--rp-maroon),var(--rp-maroon-dark)); color:#fff; padding:14px 22px; border-radius:999px; font-weight:800; box-shadow:0 16px 36px rgba(123,17,32,0.12); text-align:center; transform:translateY(-4px); font-size:15px }
+
+/* subtle pulse */
+.rp-delivery-badge{ animation:rpPulse 2.6s ease-in-out infinite }
+
+@keyframes rpPulse{ 0%{ transform:scale(1) translateY(-6px) } 50%{ transform:scale(1.02) translateY(-8px) } 100%{ transform:scale(1) translateY(-6px) } }
+
+.rp-cta{ margin-top:28px; text-align:center }
+.rp-cta-btn{ background:var(--rp-maroon); color:#fff; padding:12px 26px; border-radius:999px; border:none; font-weight:800; cursor:pointer; transition:transform .12s ease, box-shadow .12s ease; font-size:15px }
+.rp-cta-btn:hover{ transform:translateY(-4px); box-shadow:0 10px 26px rgba(123,17,32,0.18) }
+
+/* dotted connector lines between steps */
+.rp-col.left .rp-step::after{ content:""; position:absolute; left:calc(100% - 86px); top:50%; transform:translateY(-50%); width:2px; height:40px; border-left:2px dashed rgba(123,17,32,0.08); }
+.rp-col.right .rp-step::after{ content:""; position:absolute; right:calc(100% - 86px); top:50%; transform:translateY(-50%); width:2px; height:40px; border-right:2px dashed rgba(123,17,32,0.08); }
+.rp-col.left .rp-step:last-child::after,
+.rp-col.right .rp-step:last-child::after{ display:none }
+
+/* horizontal connectors towards center */
+.rp-center::before{ content:""; position:absolute; width:36px; height:2px; background:transparent }
+
+/* small circular marker near center for both sides (matches screenshot) */
+.rp-center .center-marker{ position:relative; width:48px; height:48px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 14px 36px rgba(27,27,27,0.07) }
+.rp-center .center-marker::after{ content:""; width:16px; height:16px; border-radius:50%; background:var(--rp-maroon); display:block }
+
+/* vertical connector between top and bottom center markers */
+.rp-center{ display:flex; flex-direction:column; align-items:center; gap:12px }
+.rp-center::before{ content:""; position:absolute; width:3px; height:170px; background:transparent; border-left:3px dashed rgba(123,17,32,0.08); top:8px; left:50%; transform:translateX(-50%) }
+
+/* Explicit connector positions: top step connects to top marker, bottom step connects to bottom marker */
+.rp-col.left .rp-step:nth-child(1)::after{ left:calc(100% - 86px); top:32px; height:34px }
+.rp-col.left .rp-step:nth-child(2)::after{ left:calc(100% - 86px); top:132px; height:34px }
+.rp-col.right .rp-step:nth-child(1)::after{ right:calc(100% - 86px); top:32px; height:34px }
+.rp-col.right .rp-step:nth-child(2)::after{ right:calc(100% - 86px); top:132px; height:34px }
+
+.rp-center .center-marker{ cursor:pointer; }
+.rp-center .center-marker:focus{ outline:4px solid rgba(123,17,32,0.12); }
+
+
+@keyframes rpFadeUp{ to{opacity:1; transform:translateY(0)} }
+
+@media (max-width:900px){
+  .rp-grid{ flex-direction:column; gap:18px; align-items:center }
+  .rp-col{ width:100% }
+  .rp-center{ width:100%; order:1 }
+  .rp-delivery-badge{ margin:6px 0 12px }
+  .rp-col.left .rp-step::after,
+  .rp-col.right .rp-step::after{ left:26px; top:58px }
+}
+
+/* Dark theme modifier (keeps markup safe) */
+.rp-maroon .rp-card{ background:#7b112016 }
+

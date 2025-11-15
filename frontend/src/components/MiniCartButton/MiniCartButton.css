@@ -1,0 +1,23 @@
+.mini-cart{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: #3b0000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow: 0 12px 30px rgba(27,26,25,0.12);
+  cursor:pointer;
+  z-index: 9999;
+}
+.mini-cart-icon{ font-size:20px }
+.mini-cart-count{ font-weight:700 }
+.mini-cart-total{ font-size:12px }
+@media (max-width:600px){
+  .mini-cart{ right: 12px; bottom: 12px; padding:8px 10px }
+  .mini-cart-total{ display:none }
+}

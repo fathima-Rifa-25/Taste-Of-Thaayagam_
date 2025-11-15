@@ -1,0 +1,244 @@
+/* =======================
+   Container
+======================= */
+.page-container {
+  padding: 20px;
+}
+
+/* Ensure list page uses full admin width (override any centered container) */
+.list-page.page-container,
+.list-page .list {
+  width: 100%;
+  max-width: none;
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+/* =======================
+   Table layout
+======================= */
+.list-table {
+  width: 100%;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--input-bg);
+}
+
+/* Table rows */
+.list-table-format {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr)); /* image | name | category | price | action */
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header row */
+.list-table-format.title {
+  background-color: var(--input-bg);
+  font-weight: bold;
+  border-bottom: 2px solid var(--text-color);
+}
+
+/* Images */
+.list-table-format img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+  justify-self: center; /* center image horizontally inside its grid cell */
+  margin: 0 auto; /* fallback centering */
+}
+
+/* Editable input fields */
+.list-table-format input {
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 90%;
+}
+
+/* Action icons */
+.action-icons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.edit-icon {
+  color: #3b0000; /* green */
+}
+
+.delete-icon {
+  color: #3b0000; /* red */
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 600px) {
+  .list-table-format {
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+  }
+
+  .list-table-format.title {
+    display: none;
+  }
+
+  .list-table-format input {
+    padding: 5px;
+    font-size: 13px;
+    width: 90%;
+  }
+
+  .action-icons {
+    justify-content: flex-start;
+  }
+}
+
+/* =======================
+ 
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* lighter overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content (compact & clean) */
+.modal-content {
+  background: var(--input-bg);
+  padding: 15px 20px; /* reduced padding */
+  border-radius: 8px;
+  text-align: center;
+  width: 260px; /* slightly smaller */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* Modal message text */
+.modal-content p {
+  margin: 0; /* remove extra spacing */
+  margin-bottom: 15px; /* small gap before buttons */
+  font-weight: 500;
+}
+
+/* Modal buttons container */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* smaller gap between buttons */
+}
+
+/* Modal buttons */
+.btn {
+  padding: 6px 12px; /* smaller buttons */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.btn-confirm {
+  background-color: #3b0000;
+  color: white;
+}
+
+.btn-confirm:hover {
+  background-color: #3b0000;
+}
+
+.btn-cancel {
+  background-color: #bdc3c7;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background-color: #a5a5a5;
+}
+
+/* =======================
+   Modal animations
+======================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Action icons spacing */
+.action-icons span { margin-right: 12px; display: inline-flex; }
+
+/* Make list page table use fractional columns and full width similar to supplier */
+.list-page .list-table-format {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 1.2fr 1fr 0.8fr; /* image | name | category | price | action */
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* === Dark Mode: Table Header Styling === */
+body.dark-mode .list-table-format.title {
+  background-color: var(--input-bg) !important; /* uses dark input-bg in dark mode */
+  color: var(--text-color) !important;          /* uses var text color */
+  border-bottom-color: var(--input-border) !important;
+}
+
+/* === Dark Mode: Search Input === */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="search"],
+body.dark-mode input[type="number"],
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border: 1px solid #555 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa !important;
+}
+
+/* === Dark Mode: Action Icons === */
+body.dark-mode .edit-icon,
+body.dark-mode .delete-icon {
+  color: #ff9999 !important; /* Light red for visibility */
+}
+
+body.dark-mode .edit-icon:hover,
+body.dark-mode .delete-icon:hover {
+  color: #ff4d4d !important; /* Brighter on hover */
+}
