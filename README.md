@@ -69,7 +69,7 @@ Push notifications for order updates
 ![Menu List](./screenshots/menuList.png)
 
 ###  About Us
-![About](./screenshots/About.png)
+![About](./screenshots/About-min.png)
 ![About Us Page](./screenshots/AboutUs.png)
 
 ###  Contact Us
